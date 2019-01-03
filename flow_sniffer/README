@@ -1,0 +1,30 @@
+Charles Doran
+HW 2
+CS 557 
+
+This program is a flow sniffer that will read a pcap file or capture packets off an
+interface to produce flow statistics for packets utilizing TCP, UDP or ICMP protocols.
+
+I developed this by expanding on HW1 and therefore utilized the same web resources.
+I used the tutorial at http://www.tcpdump.org/pcap.html to get started.  I 
+copied the tutorial code, got it working and then modified it to meet the 
+hw requirements.  The Ethernet, IP and TCP structs in the header file were 
+all taken directly from this tutorial.  There are a few other lines in the
+program that came directly from the tutorial, this is stuff like pcap_open_live()
+and pcap_compile() etc.  
+
+The program should run correctly as described in the assignment. I set a default 
+time of 60s instead of requiring a -t parameter as I did in HW 1. To build it do:
+
+make
+
+To run it do: 
+
+ ./fsniffer [-r filename] [-i interface] [-t time] [-o time_offset] [-N num] [-S secs]
+ ./fsniffer -i eno1 -t 30
+
+When analyzing a file the program will use the time stamps to determine what
+to output to the screen.  When sniffing an interface live the program will
+use alarm() and a signal handler to determine when to exit.   
+
+

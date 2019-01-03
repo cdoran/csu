@@ -1,0 +1,21 @@
+Charles Doran
+CS 457
+Fall 2014 
+Project 3
+
+build: make
+usage: ./myresolver <domain-name> [record-type]  
+
+The objective of this project is to implement a DNS resolver in C. The resolver should query 
+the appropriate chain of DNS authoritative servers to resolve a domain name for the requested 
+record type, including A records, AAAA records, MX records, TXT records, etc.
+
+There are a number of settings in myresolver.h that limit the program.  We have a maximum
+packet size of 4096 bytes.  The maximum rdata size for RRs is 2048 bytes. The maximum
+size for domain names and qnames is 256 bytes.  The maximum number of RR records that can
+be present in the Answer, Authority and Additional sections is 64.  The program is set up
+to send the DNSSEC OPT RR with every request, this can be changed using the GET_RRSIG 
+setting. Another setting that may help if you run into any bugs is the PRINT_RESPONSES
+setting.  It is currently set to 0, but if changed to 1 it will print the responses for the
+Header, Question, Answer, Authority and Additional sections for each iterative query. It
+provides output similiar to the HW 6 solution.

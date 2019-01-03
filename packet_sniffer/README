@@ -1,0 +1,29 @@
+Charles Doran
+CS 557
+HW 1
+
+This program sniffs TCP, UDP and ICMP packets from an Ethernet interface or
+pcap save file. The program will print the packet header information specified 
+in the assignment to the terminal.    
+
+I used the tutorial at http://www.tcpdump.org/pcap.html to get started.  I 
+copied the tutorial code, got it working and then modified it to meet the 
+hw requirements.  The Ethernet, IP and TCP structs in the header file were 
+all taken directly from this tutorial.  There are a few other lines in the
+program that came directly from the tutorial, this is stuff like pcap_open_live()
+and pcap_compile() etc.  
+
+The program should run correctly as described in the assignment. To run it on
+a file do: 
+
+./sniffer -r filename -t time [-o offset ]
+
+or on an interface:
+
+./sniffer -i device -t time  
+
+When analyzing a file the program will use the time stamps to determine what
+to output to the screen.  When sniffing an interface live the program will
+use alarm() and a signal handler to determine when to exit.   
+
+ 

@@ -1,0 +1,13 @@
+Charles Doran
+CS 557
+HW 3
+
+This program should be working as outlined in the assignment.  To build it
+just do: make. To run it just do: ./fdscan -r scan.out -V.  I placed the
+ICMP type in the detailed output under the port field.  I chose 6 for the
+port scan threshold and 10 for the Host scan threshold.  Reasonable defaults
+for these settings would really depend on the network we are trying to detect
+scans on and the services that the network provides. I chose 6 and 10 because it 
+seemed like a reasonable upper bound of what one might be using for work or school in
+a single sitting.  This was built off of HW1 and HW2 so it also uses code from
+the tutorial at http://www.tcpdump.org/pcap.html.
